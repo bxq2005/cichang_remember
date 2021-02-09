@@ -1,13 +1,13 @@
 import argparse
-import os
-import requests
-import hashlib
-import json
 import base64
+import hashlib
 import io
+import json
+import os
 import zipfile
 
 import pandas as pd
+import requests
 
 HJ_APPKEY = "45fd17e02003d89bee7f046bb494de13"
 LOGIN_URL = "https://pass.hujiang.com/Handler/UCenter.json?action=Login&isapp=true&language=zh_CN&password={password}&timezone=8&user_domain=hj&username={user_name}"
@@ -57,10 +57,6 @@ def get_learning_books_info(s):
     if not r.ok:
         raise Exception("Can not get books info from hujiang")
     return r.json()["data"]["result"]
-
-
-def get_book_study_info(s, book_id):
-    pass
 
 
 def get_book_resource_info(s, book_id):
@@ -122,7 +118,7 @@ def main(user_name, password):
     s = login(user_name, password)
     learning_books_info = get_learning_books_info(s)
     print("your learning book info is", learning_books_info)
-    
+
     if not learning_books_info:
         print("No learning book for now")
     # only get the first book, you can DIY here
