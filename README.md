@@ -1,5 +1,6 @@
 # cichang_remember
 开心词场帮助程序
+![image](https://user-images.githubusercontent.com/15976103/107328965-756e8180-6aea-11eb-9fff-6717094d74fa.png)
 
 ## USE
 1. python3.6 or higher
